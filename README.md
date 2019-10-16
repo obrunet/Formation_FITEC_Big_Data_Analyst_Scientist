@@ -1,4 +1,4 @@
-Formation [CONCEPTEUR BIG DATA – INTELLIGENCE ARTIFICIELLE – JEMS](https://www.devenez.fr/espace-candidats/les-offres-en-cours/concepteur-big-data-intelligence-artificielle-jems/)
+## Formation [CONCEPTEUR BIG DATA – INTELLIGENCE ARTIFICIELLE – JEMS](https://www.devenez.fr/espace-candidats/les-offres-en-cours/concepteur-big-data-intelligence-artificielle-jems/)
 
 - __Introduction__ : Présentation de l’écosystème BigData du point de vue technique, économique, ainsi que les différents use cases et métiers, Cloud & Big Data.
 - __Python programming & Web scraping__ : Comment  utiliser  et  faire  des  programmes  en Python-Comment faire  du  scraping  avec  les différenteslibrairies Python comme scrapy et Beautifull Soup.
