@@ -8,10 +8,11 @@ class Satellite():
     def impulsion(self, force, time):
         """Update speed considering force & time"""
         self.speed += force * time / self.mass                  # in daN, s, kg
+        self.cinetic_energy = self.energy()
 
     def display_speed(self):
         """Display name and current speed"""
-        print(f"Satellite's name : {self.name}, and speed : {self.speed}")
+        print(f"Satellite's name : {self.name}, and speed : {self.speed} m/s")
 
     def energy(self):
         """Calculate cinetic energy Ec = 1/2 * m * v**2"""
