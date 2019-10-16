@@ -6,8 +6,8 @@ Formation [CONCEPTEUR BIG DATA – INTELLIGENCE ARTIFICIELLE – JEMS](https://w
 - __Hadoop framework__ : Introduction très détaillée aux modules de l’écosystème Hadoop, Ambari, HDFS, Hive, Mapreduce, Pig, Oozie, Atlas, Ranger-Présentation de l’écosystème MapR
 - __Ecosystème Spark__ : Introduction très détaillée aux modules de l’écosystème SPARK (Core, SQL, Streaming, ML).
 - __Talend (data integration)__ : Talend: Interface et intégration de données : Connexion avec des bases des données NoSql et scalabilité des traitements en batch (SPARK & MAPREDUCE).
-- __Broker Kafka__ : Publier des données vers un cluster Kafka-Récupérer des données d’un cluster Kafka, architecture de Kafka, spark-streaming kafka, dimensionnement d’un job spark kafka-Présentation du Kafka Confluent.
+- __Broker Kafka__ : Publier des données vers un cluster Kafka-Récupérer des données d’un cluster Kafka, architecture de Kafka, spark - streaming kafka, dimensionnement d’un job spark kafka - Présentation du Kafka Confluent.
 - __Ecosystème Elastic__ : Découvrir la suite Elastic, récupérer, structurer et enrichir les données avec Logstash, stockage et indexation de données dans ElasticSearch-Exploiter& produire des tableaux de bords avec Kibana-Dimensionnement des index (shard, alias,... ).
-- __Data Visualization__ : D3js& Tableau
+- __Data Visualization__ : D3js & Tableau
 - __Management de projet avec la méthode Agile__ : Manager ses projets selon la méthode Agile – Tenir les délais – Maîtriser les coûts – Comprendre les besoins de votre client – Manager de façon efficace ses équipes.
 - __Séquence de managmeent d'un projet__ : Analyser et modéliser les processus métier – Apprendre àrédiger un cahier des charges –Mettre en place l’équipe projet – Faire évoluer le projet – Faire le reporting de l’état d’avancement du projet et de ses coûts.
