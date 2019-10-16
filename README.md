@@ -1,4 +1,4 @@
-## Formation [Concepteur Big Data – Intelligence Artificielle – JEMS](https://www.devenez.fr/espace-candidats/les-offres-en-cours/concepteur-big-data-intelligence-artificielle-jems/)
+## Formation [Concepteur Big Data – Intelligence Artificielle](https://www.devenez.fr/espace-candidats/les-offres-en-cours/concepteur-big-data-intelligence-artificielle-jems/)
 
 
 
