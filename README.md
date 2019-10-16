@@ -1,5 +1,12 @@
 ## Formation [Concepteur Big Data – Intelligence Artificielle – JEMS](https://www.devenez.fr/espace-candidats/les-offres-en-cours/concepteur-big-data-intelligence-artificielle-jems/)
 
+
+
+
+[Certification professionnelle n°3067 : « Big Data et processus décisionnel »](http://inventaire.cncp.gouv.fr/fiches/3067/)
+
+
+
 - __Introduction__ : Présentation de l’écosystème BigData du point de vue technique, économique, ainsi que les différents use cases et métiers, Cloud & Big Data.
 - __Python programming & Web scraping__ : Comment  utiliser  et  faire  des  programmes  en Python-Comment faire  du  scraping  avec  les différenteslibrairies Python comme scrapy et Beautifull Soup.
 - __Shell & Docker__ : Commandes essentielles de shellLinux et utilisation de docker comme conteneur de déploiement.
