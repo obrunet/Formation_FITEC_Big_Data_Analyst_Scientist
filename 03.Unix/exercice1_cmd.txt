@@ -1,0 +1,4 @@
+    1  clear
+    2  vi exercice1.sh
+    3  bash ./exercice1.sh
+    4  history > exercice1_cmd.txt

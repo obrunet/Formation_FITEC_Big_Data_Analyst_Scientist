@@ -1,0 +1,4 @@
+    9  echo Bonjour    tout le monde
+   10  echo "Bonjour     tout le monde"
+   11  echo "test \n test"
+   14  echo -e " etst \n test"
