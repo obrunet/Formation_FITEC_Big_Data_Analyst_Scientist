@@ -1,0 +1,7 @@
+    1  declare -r mess="test"
+    2  mess="blabla"
+    3  vartest="hi"
+    4  echo $vartest
+    5  unset vartest
+    6  echo $vartest
+    7  history > declare_var_and_unset.txt
