@@ -1,0 +1,13 @@
+   64  cd Bureau/Code/03.Unix/
+   65  vi toto.txt
+   66  touch toto.txt
+   67  cat toto.txt 
+   68  vi toto.txt
+   69  mv toto.txt toto.sh
+   70  toto.sh
+   71  ./toto.sh
+   72  bash ./toto.sh
+   73  echo $?
+   74  ls slfjsldjf
+   75  echo $?
+   76  history > vim.txt
