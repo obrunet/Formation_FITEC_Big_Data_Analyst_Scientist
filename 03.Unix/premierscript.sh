@@ -1,3 +1,5 @@
 #!/bin/bash
-var="Hello Bash"
-echo $var 
+var="Hello Bash World !"
+# commentaire : affiche la chaine
+echo $var
+echo "great !" 

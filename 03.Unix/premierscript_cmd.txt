@@ -2,5 +2,9 @@
     2  which bash
     3  vi premierscript.sh
     4  head premierscript.sh 
-    7  bash ./premierscript.sh 
+    7  bash ./premierscript.sh
+    4  chmod +x ./premierscript.sh
+    5  premierscript.sh
+    6  ls
+    7  ./premierscript.sh 
     8  history > premierscript_cmd.txt
