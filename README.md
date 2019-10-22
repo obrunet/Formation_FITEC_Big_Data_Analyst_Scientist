@@ -7,6 +7,8 @@
 
 
 
+
+
 - __Introduction__ : Présentation de l’écosystème BigData du point de vue technique, économique, ainsi que les différents use cases et métiers, Cloud & Big Data.
 
 - __Python programming & Web scraping__ : Comment  utiliser  et  faire  des  programmes  en Python-Comment faire  du  scraping  avec  les différenteslibrairies Python comme scrapy et Beautifull Soup.
