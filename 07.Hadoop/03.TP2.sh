@@ -27,3 +27,6 @@ sudo hdfs dfs -getmerge stocks.csv stocks.csv test_local.csv
 
 #hdfs dfs -getmerge -nl /src /opt/output.txt
 #hdfs dfs -getmerge -nl /src/file1.txt /src/file2.txt /output.txt
+
+# workiing comd
+hdfs dfs -getmerge -nl test/ter.csv test/bis.csv /tmp/output.csv
