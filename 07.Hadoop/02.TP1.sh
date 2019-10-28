@@ -2,7 +2,7 @@ sudo mv stocks.csv ./cloudera/stocks.csv
 less stocks.csv
 su cloudera
 
-# put the file in HDFS
+# put the file in HDFS, min size 1024 * 1024 = 1048576
 hdfs dfs -D dfs.blocksize=1048576 -put stocks.csv
 
 # check if file is there

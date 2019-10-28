@@ -19,7 +19,7 @@ docker run --name=cloudera --hostname=quickstart.cloudera --cpus=4 -m=8g --privi
 # connect to the web ui
 http://localhost:8888
 
-# if you exit docker and want to re-run it
+# if you exit docker and want to re-run it, first remove the container then relaunch the image
 docker rm $(docker ps -a -q) --force
 
 
