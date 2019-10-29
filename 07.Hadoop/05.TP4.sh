@@ -167,5 +167,8 @@ drwxrwxrwx   - cloudera supergroup          0 2019-10-29 16:03 /user/hive/wareho
 drwxrwxrwx   - cloudera supergroup          0 2019-10-29 16:03 /user/hive/warehouse/skew_demo/zip=95102
 -rwxrwxrwx   1 cloudera supergroup        214 2019-10-29 16:03 /user/hive/warehouse/skew_demo/zip=95102/000000_0
 
+#select * from table_name [order | sort] by column_name;
+select * from skew_demo limit 10
+describe skew_demo;
+select * from skew_demo order by age;
 
-select * from table_name [order | sort] by column_name;
