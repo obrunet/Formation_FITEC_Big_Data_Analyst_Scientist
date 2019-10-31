@@ -23,3 +23,7 @@ http://localhost:8888
 docker rm $(docker ps -a -q) --force
 
 
+# to launch another shell
+sudo docker exec -ti cloudera bash
+
+
