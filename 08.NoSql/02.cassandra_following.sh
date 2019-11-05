@@ -114,6 +114,26 @@ cqlsh:ecole> select  * from enseignant;
             1 | Travers | Nicolas | Vacataire
             2 | Mourier | Pascale | Titulaire
 
-(2 rows)
 cqlsh:ecole> CREATE TYPE administratif (num_secu int, num_enseign set<int>, salaire float);
 cqlsh:ecole> ALTER TABLE enseignant ADD admin adiministratif;
+cqlsh:ecole> INSERT INTO enseignant (idenseignant, admin) VALUES (55, {num_secu: 151, num_enseign: {151, 152}, salaire: 150000.2});
+cqlsh:ecole> select  * from enseignant;
+
+ idenseignant | admin                                                      | nom     | prenom  | status
+--------------+------------------------------------------------------------+---------+---------+-----------
+           55 | {num_secu: 151, num_enseign: {151, 152}, salaire: 1.5e+05} |    null |    null |      null
+            1 |                                                       null | Travers | Nicolas | Vacataire
+            2 |                                                       null | Mourier | Pascale | Titulaire
+
+cqlsh:ecole> UPDATE enseignant SET admin = {num_secu: 1, num_enseign: {800, 900}, salaire: 200000.2} WHERE idenseignant = 2;
+cqlsh:ecole> select * from enseignant ;
+
+ idenseignant | admin                                                      | nom     | prenom  | status
+--------------+------------------------------------------------------------+---------+---------+-----------
+           55 | {num_secu: 151, num_enseign: {151, 152}, salaire: 1.5e+05} |    null |    null |      null
+            1 |                                                       null | Travers | Nicolas | Vacataire
+            2 |     {num_secu: 1, num_enseign: {800, 900}, salaire: 2e+05} | Mourier | Pascale | Titulaire
+
+
+INSERT INTO enseignant JSON '{"idenseignant":5,"myinfo":{"numss":1,"numenseignant":2,"salaire":30000.0}, "nom":"Bernard", "prenom": "Albert", "status": "ok"}'; 
+
