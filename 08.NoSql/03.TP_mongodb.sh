@@ -58,3 +58,109 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 { "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
 { "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
 { "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
+
+
+
+
+> db.personne.find().sort({age: -1}).pretty();
+{
+	"_id" : ObjectId("5dc2a5dfe4dba17814366ad3"),
+	"nom" : "YOUYOU",
+	"prenom" : "test",
+	"age" : 20
+}
+{
+	"_id" : ObjectId("5dc2c4fae4dba17814366ad4"),
+	"nom" : "YOUYOU",
+	"age" : 1
+}
+{
+	"_id" : ObjectId("5dc2a2c6e4dba17814366ad0"),
+	"prenom" : "John",
+	"key1" : "val1"
+}
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
+
+
+
+
+
+
+
+> db.personne.find({}, {nom: 1});
+{ "_id" : ObjectId("5dc2a2c6e4dba17814366ad0") }
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1") }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2") }
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU" }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU" }
+> db.personne.find({}, {nom: 1, _id: 0});
+{  }
+{  }
+{  }
+{ "nom" : "YOUYOU" }
+{ "nom" : "YOUYOU" }
+
+
+
+
+
+
+
+
+
+
+
+> db.personne.find();
+{ "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test", "age" : 20 }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU", "age" : 1 }
+> db.personne.find().forEach(
+... function(perso) {
+... print(perso.nom + " " + perso.prenom);
+... }
+... );
+undefined John
+undefined John
+undefined John
+YOUYOU test
+YOUYOU undefined
+
+
+
+
+
+
+
+
+> db.personne.find({nom: /^Y/})
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test", "age" : 20 }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU", "age" : 1 }
+
+
+
+
+
+
+
+
+> db.personne.insert({_id: 6, nom: "wick", sport: ["foot", "hand", "tennis"]});
+WriteResult({ "nInserted" : 1 })
+> db.personne.find();
+{ "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test", "age" : 20 }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU", "age" : 1 }
+{ "_id" : 6, "nom" : "wick", "sport" : [ "foot", "hand", "tennis" ] }
+> db.personne.update({_id: 6}, {$push: {sprot : {$each: ["hockey", "sky", "volley"], $slice: -5}}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.personne.find();
+{ "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test", "age" : 20 }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU", "age" : 1 }
+{ "_id" : 6, "nom" : "wick", "sport" : [ "foot", "hand", "tennis" ], "sprot" : [ "hockey", "sky", "volley" ] }
