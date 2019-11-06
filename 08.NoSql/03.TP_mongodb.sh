@@ -43,3 +43,18 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 { "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
 { "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test" }
 
+
+
+
+> db.personne.find().sort({age: 1})
+{ "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU", "age" : 1 }
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test", "age" : 20 }
+> db.personne.find().sort({age: -1})
+{ "_id" : ObjectId("5dc2a5dfe4dba17814366ad3"), "nom" : "YOUYOU", "prenom" : "test", "age" : 20 }
+{ "_id" : ObjectId("5dc2c4fae4dba17814366ad4"), "nom" : "YOUYOU", "age" : 1 }
+{ "_id" : ObjectId("5dc2a2c6e4dba17814366ad0"), "prenom" : "John", "key1" : "val1" }
+{ "_id" : ObjectId("5dc2a2e3e4dba17814366ad1"), "prenom" : "John" }
+{ "_id" : ObjectId("5dc2a30ce4dba17814366ad2"), "prenom" : "John" }
