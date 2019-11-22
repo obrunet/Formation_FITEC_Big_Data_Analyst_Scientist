@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_QD5swQw-EeqQL9-EwzpB2g" name="list_user" dataPackage="_QD5swgw-EeqQL9-EwzpB2g" Server="Localhost 127.0.0.1" FilePath="/home/fitec/Talend/workspace/utilisateurs.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_QD5swgw-EeqQL9-EwzpB2g" name="default" dataManager="_QD5swQw-EeqQL9-EwzpB2g">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_QD5swww-EeqQL9-EwzpB2g" id="_LbWNQAw-EeqQL9-EwzpB2g" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_QD5sxAw-EeqQL9-EwzpB2g" label="identifiant" length="8" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_QD5sxQw-EeqQL9-EwzpB2g" label="nom" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_QD5sxgw-EeqQL9-EwzpB2g" label="prenom" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_QD5sxww-EeqQL9-EwzpB2g" label="ville" length="13" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_QD5syAw-EeqQL9-EwzpB2g" label="etat" length="14" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_QD5syQw-EeqQL9-EwzpB2g" label="salaire" length="6" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

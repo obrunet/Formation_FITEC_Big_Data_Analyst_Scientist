@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_51g68A0tEeqZ5fTOr96ToQ" name="magasin_marketing" dataPackage="_51g68Q0tEeqZ5fTOr96ToQ" Server="Localhost 127.0.0.1" FilePath="/home/fitec/Talend/workspace/TP final/marketing.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_51g68Q0tEeqZ5fTOr96ToQ" name="default" dataManager="_51g68A0tEeqZ5fTOr96ToQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_51g68g0tEeqZ5fTOr96ToQ" id="_vCoAIA0tEeqZ5fTOr96ToQ" label="metadata_marketing">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_51g68w0tEeqZ5fTOr96ToQ" label="Departement" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_51g69A0tEeqZ5fTOr96ToQ" label="Num_Magasin" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_51g69Q0tEeqZ5fTOr96ToQ" label="Type_Rayon" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_51g69g0tEeqZ5fTOr96ToQ" label="Nom_Rayon" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_51g69w0tEeqZ5fTOr96ToQ" label="BS" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_51g6-A0tEeqZ5fTOr96ToQ" label="R" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

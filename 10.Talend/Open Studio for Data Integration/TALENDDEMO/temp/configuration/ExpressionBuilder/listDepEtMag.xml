@@ -1,0 +1,12 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="Integer.parseInt(row1.Num_dept)">
+  <variables name="row1.Departement" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.Num_Magasin" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.Type_Rayon" value="null" talendType="id_Character" nullable="true"/>
+  <variables name="row1.Nom_Rayon" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.BS" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.R" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.Num_dept" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.Nom_dept" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.Population" value="null" talendType="id_Integer" nullable="true"/>
+</expression:EMFExpression>
