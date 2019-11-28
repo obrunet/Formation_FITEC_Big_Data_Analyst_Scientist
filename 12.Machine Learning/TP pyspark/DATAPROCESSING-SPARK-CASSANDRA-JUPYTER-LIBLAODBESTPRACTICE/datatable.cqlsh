@@ -1,0 +1,10 @@
+CREATE KEYSPACE dataTable WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+
+CREATE TABLE dataTable.dept(
+ id INT,
+ region_code TEXT,
+ code TEXT,
+ name TEXT,
+ slug TEXT,
+PRIMARY KEY (id)
+);

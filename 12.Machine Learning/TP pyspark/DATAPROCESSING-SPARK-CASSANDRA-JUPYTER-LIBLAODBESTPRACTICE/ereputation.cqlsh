@@ -1,0 +1,10 @@
+CREATE KEYSPACE ereputation WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+
+CREATE TABLE ereputation.tweet(
+ id TEXT,
+ source TEXT,
+ user_id TEXT,
+ user_name TEXT,
+ user_followers_count TEXT,
+PRIMARY KEY (id)
+);
