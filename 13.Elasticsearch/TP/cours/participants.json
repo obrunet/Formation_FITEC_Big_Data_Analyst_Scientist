@@ -1,0 +1,4 @@
+{"index":{"_index":"fitec","_type":"etudiant","_id":null}}
+{"nom":"me","prenom":"moi","adresse":"ici"}
+{"index":{"_index":"fitec","_type":"formateur","_id":null}}
+{"nom":"lui", "adresse":"la-bas", "tarif":100}
