@@ -137,3 +137,33 @@ curl -XGET "http://localhost:9200/clients/simple/_search?q=ville:Paris&pretty"
 # with multiple index
 curl -XGET "localhost:9200/index1,index2/..."
 curl -XGET "localhost:9200/_all/..."
+
+
+# retrieve all docs
+curl -XPOST "http://localhost:9200/clients/simple/_search?pretty" -H'Content-Type: application/json' -d'
+{
+	"query": {
+		"match_all": {}
+	}
+}'
+
+
+# retrieve docs form 11 to 20. By default, the value of param from is 0
+curl -XPOST "http://localhost:9200/clients/simple/_search?pretty" -H'Content-Type: application/json' -d'
+{
+	"query": {
+		"match_all": {}
+	},
+	"from": 10,
+	"size": 20
+}'
+
+
+# with param _source : defines field that should be returned
+curl -XPOST "http://localhost:9200/clients/simple/_search?pretty" -H'Content-Type: application/json' -d'
+{
+	"query": {
+		"match_all": {}
+	},
+	"_source": ["firstName", "age"]
+}'
