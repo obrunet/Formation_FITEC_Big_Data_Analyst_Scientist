@@ -1,0 +1,341 @@
+https://notepad.pw/m2isophia
+
+https://www.dropbox.com/sh/bd5u25rchj34fww/AAA8y_Xnum2bLVIJSGJADYMda?dl=0
+
+
+ALTER TABLE tablename SET TBLPROPERTIES ("skip.header.line.count"="1");
+
+ALTER TABLE t1    
+set serde 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES ('field.delim' = ',');
+
+
+
+2698
+
+
+docker rm $(docker ps -a -q) --force
+
+
+#1 construire le header
+
+header = ("nom","prenom","age")
+
+#2 instialiser la liste
+
+people =[]
+
+#3 alimenter la liste
+
+#3.0 boucler sur un range
+for i in range(1,100): 
+#3.1 creer un dico 
+	element ={}
+	element[header[0]]=header[0]+str(i)
+	element[header[1]]=header[1]+str(i)
+	element[header[2]]=str(i)
+#3.2 ajouter un dico à la liste
+	people.append(element)
+
+print(people)
+#lire le fichier
+filename= 'stocks.csv'
+#identifier le separateur
+sep = ','
+#1 instialiser la liste
+datas =[]
+
+#2 construire le header à partir de la premiere ligne
+with open(filename) as fp:
+	header = fp.readline().replace('\n','').split(sep)
+
+#3 alimenter la liste
+	line = fp.readline()
+#3.0 boucler sur les lignes du fichier
+	while line:
+#3.1 creer un dico 
+		element ={}
+		data = line.replace('\n','').split(sep)
+		for i  in range (0, len(data)):
+			element[header[i]]=data[i]
+			line = fp.readline()
+#3.2 ajouter un dico à la liste
+		datas.append(element)
+
+print(datas)
+
+
+
+#lire le fichier
+filename= 'stocks.csv'
+#identifier le separateur
+sep = ','
+#1 instialiser la liste
+datas =[]
+def convertCSVToList(nomFichier, separateur, target):
+	#2 construire le header à partir de la premiere ligne
+	with open(nomFichier) as fp:
+		header = fp.readline().replace('\n','').split(separateur)
+
+	#3 alimenter la liste
+		line = fp.readline()
+	#3.0 boucler sur les lignes du fichier
+		while line:
+	#3.1 creer un dico 
+			element ={}
+			data = line.replace('\n','').split(sep)
+			for i  in range (0, len(data)):
+				element[header[i]]=data[i]
+				line = fp.readline()
+	#3.2 ajouter un dico à la liste
+			target.append(element)
+
+convertCSVToList(filename, sep, datas)
+print(datas)
+
+https://docs.scrapy.org/en/latest/intro/tutorial.html
+scrapy genspider quote quotes.toscrape.com
+
+
+# -*- coding: utf-8 -*-
+import scrapy
+class QuoteSpider(scrapy.Spider):
+    name = 'quote'
+    def start_requests(self):
+        urls = [
+            'http://quotes.toscrape.com/page/1/',
+            'http://quotes.toscrape.com/page/2/',
+        ]
+        for url in urls:
+            yield scrapy.Request(url=url, callback=self.parse)
+    def parse(self, response):
+        page = response.url.split("/")[-2]
+        filename = 'quotes-%s.html' % page
+        with open(filename, 'wb') as f:
+            f.write(response.body)
+            print(response.css('div.quote:nth-child(1) > span:nth-child(1)::text').getall())
+        self.log('Saved file %s' % filename)
+
+
+pRDD =  sc.parallelize(datas)
+
+def toStrip(dico):
+  dico["REF"] = dico["REF"].strip() 
+  dico["REG"] = dico["REG"].upper()
+  dico["COM"] = dico["COM"].upper()
+  return dico
+  
+toto =pRDD.map(lambda element:toStrip(element))
+toto.filter(lambda m:m["DPT"]=='33').collect()
+
+
+%sql
+select r.code, r.name as NEW_NAME, p.*, regexp_replace(split(INSEE,';')[0],'[^\\d]', '')  as INSEE_CLEAN 
+from palissy p left join departments d on d.code = p.DPT 
+left join regions r on r.code = d.region_code
+
+https://fr.wikipedia.org/wiki/Jointure_(informatique)#/media/Fichier:SQL_Joins.svg
+
+
+
+
+
+
+from kafka import KafkaProducer
+import json
+#lire le fichier
+filename= 'palissy-MH-valid.csv'
+#identifier le separateur
+sep = '|'
+#1 instialiser la liste
+producer = KafkaProducer(value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+def convertCSVToList(nomFichier, separateur, target):
+	#2 construire le header à partir de la premiere ligne
+	with open(nomFichier) as fp:
+		header = fp.readline().replace('\n','').split(separateur)
+
+	#3 alimenter la liste
+		line = fp.readline()
+	#3.0 boucler sur les lignes du fichier
+		while line:
+	#3.1 creer un dico 
+			element ={}
+			data = line.replace('\n','').split(sep)
+			for i  in range (0, len(data)):
+				element[header[i]]=data[i]
+				line = fp.readline()
+	#3.2 ajouter un dico au pîpeline
+			producer.send(target, element)
+
+convertCSVToList(filename, sep,'monuments')
+
+
+
+
+https://github.com/dpkp/kafka-python
+pip install kafka-python
+
+https://docs.confluent.io/current/ksql/docs/tutorials/examples.html
+def toRow(x):
+    return dict([(str(k).lower(), v) for k, v in json.loads(x).items()])
+#    return Row(stat= line['STAT'],
+#                dpt=line['DPT'],
+#                matr=line['MATR'], scle=line['SCLE'],
+#                ref=line['REF'],insee=line['INSEE'],deno=line['DENO'],
+#                dpro=line['DPRO'],autr=line['AUTR'],
+#                edif=line['EDIF'],
+#                com=line['COM'],reg=line['REG'],tico=line['TICO'])
+
+CREATE TABLE histoire.monuments(ref TEXT,reg TEXT, dpt TEXT, com TEXT, insee TEXT, edif TEXT,  deno TEXT,     tico TEXT,     matr TEXT,     autr TEXT,     scle TEXT,     dpro TEXT,     stat TEXT, PRIMARY KEY(ref));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# coding: utf-8
+
+# In[32]:
+
+import os
+os.environ['PYSPARK_SUBMIT_ARGS'] = '--conf spark.ui.port=4040 --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.0.0,com.datastax.spark:spark-cassandra-connector_2.11:2.0.0-M3 pyspark-shell'
+
+
+# In[87]:
+
+from pyspark import SparkContext, SparkConf
+from pyspark.sql import SQLContext, Row
+conf = SparkConf()     .setAppName("Load PALISSY")     .setMaster("local[2]")     .set("spark.cassandra.connection.host", "127.0.0.1")
+sc = SparkContext(conf=conf) 
+sqlContext=SQLContext(sc)
+from pyspark.streaming import StreamingContext
+from pyspark.streaming.kafka import KafkaUtils
+
+
+# In[88]:
+
+def saveToCassandra(rows):
+    if not rows.isEmpty(): 
+        sqlContext.createDataFrame(rows).write        .format("org.apache.spark.sql.cassandra")        .mode('append')        .options(table="monuments", keyspace="histoire")        .save()
+
+
+# In[89]:
+
+def toRow(x):
+    return dict([(str(k).lower(), v) for k, v in json.loads(x).items()])
+#    return Row(stat= line['STAT'],
+#                dpt=line['DPT'],
+#                matr=line['MATR'], scle=line['SCLE'],
+#                ref=line['REF'],insee=line['INSEE'],deno=line['DENO'],
+#                dpro=line['DPRO'],autr=line['AUTR'],
+#                edif=line['EDIF'],
+#                com=line['COM'],reg=line['REG'],tico=line['TICO'])
+
+
+# In[90]:
+
+import json
+ssc = StreamingContext(sc, 5)
+kvs = KafkaUtils.createStream(ssc, "127.0.0.1:2181", "spark-streaming-consumer", {'monuments': 1})
+rows = kvs.map(lambda x: toRow(x[1]))
+rows.foreachRDD(saveToCassandra)
+rows.pprint()
+
+
+# In[91]:
+
+ssc.start()
+
+
+# In[86]:
+
+ssc.stop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker exec -ti elassandra-1 cqlsh
+
+
+
+
+CREATE KEYSPACE histoire  WITH replication={ 'class': 'NetworkTopologyStrategy', 'DC1': '1' };
+
+CREATE TABLE histoire.monuments(ref TEXT,reg TEXT, dpt TEXT, com TEXT, insee TEXT, edif TEXT,  deno TEXT,     tico TEXT,     matr TEXT,     autr TEXT,     scle TEXT,     dpro TEXT,     stat TEXT, PRIMARY KEY(ref));
+
+
+exit;
+
+docker exec -ti elassandra-1 bash
+
+
+curl -XPUT "http://localhost:9200/histoire" -H "Content-Type: application/json" -d '{
+   "settings" : { "keyspace" : "histoire" } },
+   "mappings":{  
+     "monuments":{  
+        "properties":{  
+           "ref":{  
+              "type":"string",
+              "index":"not_analyzed"
+           }
+        }
+     }
+  }
+}'
+
+
+
+
+
+curl -XPUT "http://localhost:9200/histoire/_mapping/monuments" -H "Content-Type: application/json" -d '{
+    "monuments" : {
+        "discover" : "[a-zA-Z].*", 
+        "properties" : {
+            "ref" : {
+                "type" : "text"
+            }
+        }
+    }
+}'
+
+
+docker inspect --format='{{ .NetworkSettings.IPAddress }}' elassandra-1
+
+
+
+docker run --name nifi  -p 8080:8080  -d apache/nifi:latest
+
+

@@ -1,0 +1,22 @@
+{
+	"nassim":{
+		"nom":"aber",
+		"prenom":"nassim",
+		"adresse":{
+			"numero":12,
+			"rue":"ici",
+			"codepostale":"00000",
+			"ville":"qdsf"
+			}
+		},
+	"robin":{
+			"nom":"qsds",
+			"prenom":"robin",
+			"adresse":{
+				"numero":123123,
+				"rue":"labas",
+				"codepostale":"HQSDCU^$lmqsdfn",
+				"ville":"voisine"
+			}
+		}
+}
